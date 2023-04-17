@@ -2,7 +2,6 @@ package com.example.fxznova;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
-
 import java.util.Random;
 
 
@@ -99,6 +98,7 @@ public class Life {
 
 
     /*
+    //count neigh funkce z myho og kodu - bude zde místo aktualni funkce countAliveNeighbors
     private static int countAliveNeighbors(Cell c, Cell maze[][]) {
         int sum = 0;
         for (int i = -1; i < 2; i++) {

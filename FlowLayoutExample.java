@@ -27,11 +27,8 @@ public class FlowLayoutExample {
 
         jb1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                //tf.setText("Welcome to Javatpoint.");
-                System.out.println("Hello world!");
-                //new Life().initArr(intArray);
+                System.out.println("Spustit simulaci");
                 new GameOfLife().main(null);//zavola javafx pro zobrazeni
-                //Game g = new Game(20,20, 0,0);
             }
         });
 
@@ -42,7 +39,6 @@ public class FlowLayoutExample {
                 Game g = new Game(20,20, 0,0);
             }
         });
-
 
 
         // Define the panel to hold the buttons
