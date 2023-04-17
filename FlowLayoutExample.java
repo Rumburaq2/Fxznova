@@ -35,6 +35,16 @@ public class FlowLayoutExample {
             }
         });
 
+        jb2.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                //tf.setText("Welcome to Javatpoint.");
+                System.out.println("rucni nastaveni");
+                Game g = new Game(20,20, 0,0);
+            }
+        });
+
+
+
         // Define the panel to hold the buttons
         JPanel panel = new JPanel();
         panel.setLayout(new FlowLayout());
