@@ -24,18 +24,12 @@ public class Life {
         grid = new int[rows][cols];
     }
 
-    /*
-    public void initArr(int[] nums){
-
-    }
-
-     */
 
     public void init() {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 grid[i][j] = random.nextInt(2);//vykomentovat
-
+                //importneme pomocí getteru 2D pole z tridy FlowLayout/Nastavovače
             }
         }
         draw();
@@ -84,6 +78,7 @@ public class Life {
         draw();
     }
 
+
     private int countAliveNeighbors(int i, int j) {
         int sum = 0;
         int iStart = i == 0 ? 0 : -1;
@@ -101,4 +96,24 @@ public class Life {
 
         return sum;
     }
+
+
+    /*
+    private static int countAliveNeighbors(Cell c, Cell maze[][]) {
+        int sum = 0;
+        for (int i = -1; i < 2; i++) {
+            for (int j = -1; j < 2; j++) {
+                int col = (c.x + i + SLOUPCE) % SLOUPCE;
+                int row = (c.y + j + SLOUPCE) % SLOUPCE;
+                sum += maze[col][row].stav;
+            }
+        }
+        int u = c.x;
+        int z = c.y;
+        sum = sum - maze[u][z].stav;
+        return sum;
+    }
+
+     */
+
 }
