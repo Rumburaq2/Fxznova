@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 
 public class GameOfLife extends Application {
 
-    private static final int width = 500;
+    private static final int width = 500;//muzeme vypocitat vychozi hodnotu podle poctu bunek
     private static final int height = 500;
     private static final int cellSize = 10;
 
@@ -44,6 +44,8 @@ public class GameOfLife extends Application {
 
         int rows = (int) Math.floor(height / cellSize);
         int cols = (int) Math.floor(width / cellSize);
+        //int rows = 20;
+        //int cols = 20;
 
         GraphicsContext graphics = canvas.getGraphicsContext2D();
         Life life = new Life(rows, cols, graphics);
