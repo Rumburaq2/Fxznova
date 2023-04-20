@@ -12,6 +12,9 @@ public class FlowLayoutExample {
 
     private int[] intArray = new int[]{ 1,2,3,4,5,6,7,8,9,10 };//pasuju pole do javafx
 
+     //Cell grid_arr[][];
+    private Cell[][] grid_arr = new Cell[20][20];
+
     public static void main(String[] args) {
 
 
@@ -56,6 +59,16 @@ public class FlowLayoutExample {
 
     public int[] getNumArray() {
         return intArray.clone();
+    }
+
+    public static void setAllDead(Cell[][] pole){
+
+        for (int i = 0; i < 20; i++) {
+            for (int j = 0; j < 20; j++) {
+                 pole[i][j].stav = 0;
+
+            }
+        }
     }
 
 }

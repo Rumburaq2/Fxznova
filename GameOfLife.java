@@ -18,8 +18,14 @@ public class GameOfLife extends Application {
     private static final int height = 500;
     private static final int cellSize = 10;
 
+    Cell[][] grid_ar = new Cell[20][20];
+
     public static void main(String[] args) {
         launch(args);
+    }
+
+    public Cell[][] getGrid_ar() {
+        return grid_ar;
     }
 
     @Override
@@ -63,6 +69,21 @@ public class GameOfLife extends Application {
                 }
             }
         };
+
+
+        /*
+
+        EraseAction C = new EraseAction(0,0);
+        grid_ar = C.getArray();
+        for (int i = 0; i < 20; i++) {
+            for (int j = 0; j < 20; j++) {
+                if(grid_ar[i][j].stav == 1) {
+                    System.out.println(grid_ar[i][j].stav);
+                }
+            }
+        }
+
+         */
 
         reset.setOnAction(l -> life.init());
         run.setOnAction(l -> runAnimation.start());
