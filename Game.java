@@ -11,7 +11,7 @@ public class Game extends JFrame {
 
     private JPanel ButtonPanel;
 
-    public EraseAction[][] grid_arr = new EraseAction[20][20];
+    public static EraseAction[][] grid_arr = new EraseAction[20][20];
 
 
 

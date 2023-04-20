@@ -72,6 +72,23 @@ public class GameOfLife extends Application {
         //Game h = new Game();
         //grid_ar = FlowLayoutExample.g
 
+        EraseAction e = new EraseAction(0,0);
+       // e = Game.grid_arr[0][1];
+        //System.out.println(e.alive);
+
+        for (int i = 0; i < 20; i++) {
+            for (int j = 0; j < 20; j++) {
+                e = Game.grid_arr[i][j];
+                if(e.alive){
+                    System.out.print(e.x);
+                    System.out.print(", ");
+                    System.out.println(e.y);
+                }
+
+
+            }
+        }
+
 
 
         /*
