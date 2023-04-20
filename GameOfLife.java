@@ -18,15 +18,13 @@ public class GameOfLife extends Application {
     private static final int height = 500;
     private static final int cellSize = 10;
 
-    Cell[][] grid_ar = new Cell[20][20];
+    EraseAction[][] grid_ar = new EraseAction[20][20];
 
     public static void main(String[] args) {
         launch(args);
     }
 
-    public Cell[][] getGrid_ar() {
-        return grid_ar;
-    }
+
 
     @Override
     public void start(Stage primaryStage) {
@@ -69,6 +67,11 @@ public class GameOfLife extends Application {
                 }
             }
         };
+
+
+        //Game h = new Game();
+        //grid_ar = FlowLayoutExample.g
+
 
 
         /*
