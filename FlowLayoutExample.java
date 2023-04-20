@@ -61,6 +61,8 @@ public class FlowLayoutExample {
         return intArray.clone();
     }
 
+
+
     public static void setAllDead(Cell[][] pole){
 
         for (int i = 0; i < 20; i++) {
