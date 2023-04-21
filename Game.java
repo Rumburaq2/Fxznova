@@ -63,4 +63,9 @@ public class Game extends JFrame {
     public EraseAction[][] getGrid_arr() {
         return grid_arr.clone();
     }
+
+
+
+
+
 }
