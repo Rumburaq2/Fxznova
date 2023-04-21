@@ -49,7 +49,6 @@ public class EraseAction extends AbstractAction {
             System.out.println(this.x + " " + this.y + " " + this.alive);
             pocitadlo++;
 
-
         }
     }
 }

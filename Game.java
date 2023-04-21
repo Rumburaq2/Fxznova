@@ -14,9 +14,8 @@ public class Game extends JFrame {
     public static EraseAction[][] grid_arr = new EraseAction[20][20];
 
 
-
     public Game(int rows,int cols,int hgap,int vgap){
-        JFrame frame=new JFrame("Set JButton background color");//todo Jframe nefunguje idk
+        JFrame frame=new JFrame("Set JButton background color");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         PanelPanelu = new JPanel();
         PanelPanelu.setPreferredSize(new Dimension(500, 600));
@@ -59,13 +58,4 @@ public class Game extends JFrame {
         pack();
         setVisible(true);
     }
-
-    public EraseAction[][] getGrid_arr() {
-        return grid_arr.clone();
-    }
-
-
-
-
-
 }

@@ -10,13 +10,7 @@ import java.awt.event.ActionListener;
 
 public class FlowLayoutExample {
 
-    private int[] intArray = new int[]{ 1,2,3,4,5,6,7,8,9,10 };//pasuju pole do javafx
-
-     //Cell grid_arr[][];
-    private Cell[][] grid_arr = new Cell[20][20];
-
     public static void main(String[] args) {
-
 
         // Create and set up a frame window
         JFrame.setDefaultLookAndFeelDecorated(true);
@@ -24,13 +18,14 @@ public class FlowLayoutExample {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Define new buttons
-        JButton jb1 = new JButton("Button 1");
-        JButton jb2 = new JButton("Button 2");
+        JButton jb1 = new JButton("Spustit simulaci");
+        JButton jb2 = new JButton("Konfigurace počátečního stavu");
         JButton jb3 = new JButton("Button 3");
 
         jb1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 System.out.println("Spustit simulaci");
+                //musíme array otocit protoze mi to rekl Zeus
                 rotateMatrix(Game.grid_arr);
                 new GameOfLife().main(null);//zavola javafx pro zobrazeni
             }
@@ -38,13 +33,11 @@ public class FlowLayoutExample {
 
         jb2.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                //tf.setText("Welcome to Javatpoint.");
                 System.out.println("rucni nastaveni");
                 //musíme array otocit protoze mi to rekl Zeus
                 Game g = new Game(20,20, 0,0);
             }
         });
-
 
         // Define the panel to hold the buttons
         JPanel panel = new JPanel();
@@ -59,12 +52,6 @@ public class FlowLayoutExample {
         frame.setVisible(true);
     }
 
-    public int[] getNumArray() {
-        return intArray.clone();
-    }
-
-
-
     public static void setAllDead(Cell[][] pole){
 
         for (int i = 0; i < 20; i++) {
@@ -75,7 +62,7 @@ public class FlowLayoutExample {
         }
     }
 
-
+    //https://www.geeksforgeeks.org/inplace-rotate-square-matrix-by-90-degrees/
     private static void rotateMatrix(EraseAction[][] mat)
     {
         int N = 20;
@@ -108,6 +95,4 @@ public class FlowLayoutExample {
             }
         }
     }
-
-
 }
