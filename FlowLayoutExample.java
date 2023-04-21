@@ -31,6 +31,7 @@ public class FlowLayoutExample {
         jb1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 System.out.println("Spustit simulaci");
+                rotateMatrix(Game.grid_arr);
                 new GameOfLife().main(null);//zavola javafx pro zobrazeni
             }
         });
@@ -39,6 +40,7 @@ public class FlowLayoutExample {
             public void actionPerformed(ActionEvent e){
                 //tf.setText("Welcome to Javatpoint.");
                 System.out.println("rucni nastaveni");
+                //musíme array otocit protoze mi to rekl Zeus
                 Game g = new Game(20,20, 0,0);
             }
         });
@@ -72,5 +74,40 @@ public class FlowLayoutExample {
             }
         }
     }
+
+
+    private static void rotateMatrix(EraseAction[][] mat)
+    {
+        int N = 20;
+        //EraseAction e = new EraseAction(0,0);
+        // Consider all squares one by one
+        for (int x = 0; x < N / 2; x++) {
+            // Consider elements in group
+            // of 4 in current square
+            for (int y = x; y < N - x - 1; y++) {
+                // Store current cell in
+                // temp variable
+                EraseAction e = new EraseAction(0,0);
+                e = mat[x][y];
+                x = e.x;
+                y = e.y;
+
+                // Move values from right to top
+                mat[x][y] = mat[y][N - 1 - x];
+
+                // Move values from bottom to right
+                mat[y][N - 1 - x]
+                        = mat[N - 1 - x][N - 1 - y];
+
+                // Move values from left to bottom
+                mat[N - 1 - x][N - 1 - y]
+                        = mat[N - 1 - y][x];
+
+                // Assign temp to left
+                mat[N - 1 - y][x] = e;
+            }
+        }
+    }
+
 
 }

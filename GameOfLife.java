@@ -46,10 +46,10 @@ public class GameOfLife extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
 
-        int rows = (int) Math.floor(height / cellSize);
-        int cols = (int) Math.floor(width / cellSize);
-        //int rows = 20;
-        //int cols = 20;
+        //int rows = (int) Math.floor(height / cellSize);
+        ///int cols = (int) Math.floor(width / cellSize);
+        int rows = 20;
+        int cols = 20;
 
         GraphicsContext graphics = canvas.getGraphicsContext2D();
         Life life = new Life(rows, cols, graphics);
