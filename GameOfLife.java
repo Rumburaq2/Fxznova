@@ -32,10 +32,6 @@ public class GameOfLife extends Application {
         Scene scene = new Scene(root, width, height + 100);
         final Canvas canvas = new Canvas(width, height);
 
-        FlowLayoutExample f = new FlowLayoutExample();
-        int[] secondArray = f.getNumArray();
-        System.out.println(secondArray.toString());
-        System.out.println(secondArray[2]);
 
         Button reset = new Button("Reset");
         Button step = new Button("Step");
@@ -69,13 +65,8 @@ public class GameOfLife extends Application {
         };
 
 
-        //Game h = new Game();
-        //grid_ar = FlowLayoutExample.g
-
+        /*
         EraseAction e = new EraseAction(0,0);
-       // e = Game.grid_arr[0][1];
-        //System.out.println(e.alive);
-
         for (int i = 0; i < 20; i++) {
             for (int j = 0; j < 20; j++) {
                 e = Game.grid_arr[i][j];
@@ -89,21 +80,8 @@ public class GameOfLife extends Application {
             }
         }
 
-
-
-        /*
-
-        EraseAction C = new EraseAction(0,0);
-        grid_ar = C.getArray();
-        for (int i = 0; i < 20; i++) {
-            for (int j = 0; j < 20; j++) {
-                if(grid_ar[i][j].stav == 1) {
-                    System.out.println(grid_ar[i][j].stav);
-                }
-            }
-        }
-
          */
+
 
         reset.setOnAction(l -> life.init());
         run.setOnAction(l -> runAnimation.start());
