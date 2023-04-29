@@ -16,7 +16,6 @@ public class Life {
     private static final int height = 500;
     private static final int cellSize = 10;
 
-    //private Cell[][] next;
     private Cell[][] next = new Cell[20][20];
 
     public Life(int rows, int cols, GraphicsContext graphics) {
@@ -45,7 +44,6 @@ public class Life {
 
             }
         }
-        //next = grid;
         //nastavyme vsechny bunky v next na 0
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
@@ -56,8 +54,6 @@ public class Life {
         draw();
     }
 
-    //btw funkce opravena - bylo tam inverzne prohozeny kresleni - kreslilo spatne - prohodil jsem i a j
-    //problem --> vyresen ez gg
     private void draw() {
         // clear graphics
         graphics.setFill(Color.LAVENDER);
@@ -101,40 +97,17 @@ public class Life {
         grid = next;
         draw();
     }
-
      */
 
 
     public void tick() {
-        //Cell[][] next = new Cell[rows][cols];//pole pro dalsi generaci
-
-        //next = grid;//mby fix tohle - next na zacatku nema zadnou hodnotu takze jsem
-        // to vyresil tak ze se na zacatku skopiruje z grid. pak se to ale dela pokazdy zbytecne protoze to je
-        // i na konci
-        //pro kazdou bunku
+        //pro kazdou bunkku
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 Cell c = grid[i][j];
                 int neighbors = countAliveNeighbors(c, grid);
 
-                /*
-                if (c.stav == 0 && neighbors == 3) {
-                    next[i][j].stav = 1;
-                }
-                else if (c.stav == 1) {
-                    if (neighbors < 2) {
-                        next[i][j].stav = 0;
-                    }
-                    else if (neighbors > 3) {
-                        next[i][j].stav = 0;
-                    }
-                    else {//zustane stejny stav
-                        next[i][j].stav = 1;
-                    }
-                }
-
-                 */
-
+                //definujeme pravidla - game of life
                 if (c.stav == 0 && neighbors == 3) {
                     Cell x = new Cell(i, j, 1);
                     next[i][j] = x;
@@ -155,7 +128,8 @@ public class Life {
                 }
             }
         }
-        //grid = next;
+
+        //prekopirujeme a vykreslime vysledek
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 grid[i][j] = next[i][j];
@@ -164,30 +138,6 @@ public class Life {
         draw();
     }
 
-
-    /*
-    private int countAliveNeighbors(int i, int j) {
-        int sum = 0;
-        int iStart = i == 0 ? 0 : -1;
-        int iEndInclusive = i == grid.length - 1 ? 0 : 1;
-        int jStart = j == 0 ? 0 : -1;
-        int jEndInclusive = j == grid[0].length - 1 ? 0 : 1;
-
-        for (int k = iStart; k <= iEndInclusive; k++) {
-            for (int l = jStart; l <= jEndInclusive; l++) {
-                sum += grid[i + k][l + j];
-            }
-        }
-
-        sum -= grid[i][j];
-
-        return sum;
-    }
-
-     */
-
-
-    //count neigh funkce z myho og kodu - bude zde místo aktualni funkce countAliveNeighbors
     private int countAliveNeighbors(Cell c, Cell maze[][]) {
         int sum = 0;
         for (int i = -1; i < 2; i++) {
@@ -202,6 +152,4 @@ public class Life {
         sum = sum - maze[u][z].stav;
         return sum;
     }
-
-
 }

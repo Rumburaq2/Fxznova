@@ -48,13 +48,4 @@ public class FlowLayoutExample {
         frame.pack();
         frame.setVisible(true);
     }
-
-    public static void setAllDead(Cell[][] pole){
-        for (int i = 0; i < 20; i++) {
-            for (int j = 0; j < 20; j++) {
-                 pole[i][j].stav = 0;
-
-            }
-        }
-    }
 }
