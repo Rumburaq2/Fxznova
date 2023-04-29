@@ -66,27 +66,6 @@ public class Life {
                 }
             }
         }
-        /*
-        for (int i = 0; i < grid.length; i++) {
-            for (int j = 0; j < grid[i].length; j++) {
-                if (grid[i][j] == 1) {
-                    // first rect will end up becoming the border
-                    graphics.setFill(Color.gray(0.5, 0.5));
-                    graphics.fillRect(i * cellSize, j * cellSize, cellSize, cellSize);
-                    graphics.setFill(Color.PURPLE);
-                    graphics.fillRect((i * cellSize) + 1, (j * cellSize) + 1, cellSize - 2, cellSize - 2);
-                }else {
-                    graphics.setFill(Color.gray(0.5, 0.5));
-                    graphics.fillRect(i * cellSize, j * cellSize, cellSize, cellSize);
-                    graphics.setFill(Color.LAVENDER);
-                    graphics.fillRect((i * cellSize) + 1, (j * cellSize) + 1, cellSize - 2, cellSize - 2);
-                }
-            }
-        }
-         */
-
-
-
     }
 
     public void tick() {
