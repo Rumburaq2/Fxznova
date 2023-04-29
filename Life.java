@@ -43,11 +43,30 @@ public class Life {
         draw();
     }
 
+    //btw funkce opravena - bylo tam inverzne prohozeny kresleni - kreslilo spatne - prohodil jsem i a j
+    //problem --> vyresen ez gg
     private void draw() {
         // clear graphics
         graphics.setFill(Color.LAVENDER);
         graphics.fillRect(0, 0, width, height);
 
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
+                if (grid[i][j] == 1) {
+                    // first rect will end up becoming the border
+                    graphics.setFill(Color.gray(0.5, 0.5));
+                    graphics.fillRect(j * cellSize, i * cellSize, cellSize, cellSize);
+                    graphics.setFill(Color.PURPLE);
+                    graphics.fillRect((j * cellSize) + 1, (i * cellSize) + 1, cellSize - 2, cellSize - 2);
+                }else {
+                    graphics.setFill(Color.gray(0.5, 0.5));
+                    graphics.fillRect(j * cellSize, i * cellSize, cellSize, cellSize);
+                    graphics.setFill(Color.LAVENDER);
+                    graphics.fillRect((j * cellSize) + 1, (i * cellSize) + 1, cellSize - 2, cellSize - 2);
+                }
+            }
+        }
+        /*
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid[i].length; j++) {
                 if (grid[i][j] == 1) {
@@ -64,6 +83,10 @@ public class Life {
                 }
             }
         }
+         */
+
+
+
     }
 
     public void tick() {
