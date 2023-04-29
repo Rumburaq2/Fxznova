@@ -57,7 +57,7 @@ public class GameOfLife extends Application {
             @Override
             public void handle(long now) {
                 // only update once every second
-                if ((now - lastUpdate) >= TimeUnit.MILLISECONDS.toNanos(200)) {
+                if ((now - lastUpdate) >= TimeUnit.MILLISECONDS.toNanos(100)) {
                     life.tick();
                     lastUpdate = now;
                 }
