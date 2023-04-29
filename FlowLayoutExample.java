@@ -26,7 +26,7 @@ public class FlowLayoutExample {
             public void actionPerformed(ActionEvent e){
                 System.out.println("Spustit simulaci");
                 //musíme array otocit protoze mi to rekl Zeus
-                rotateMatrix(Game.grid_arr);
+               // rotateMatrix(Game.grid_arr);
                 new GameOfLife().main(null);//zavola javafx pro zobrazeni
             }
         });
@@ -34,7 +34,6 @@ public class FlowLayoutExample {
         jb2.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 System.out.println("rucni nastaveni");
-                //musíme array otocit protoze mi to rekl Zeus
                 Game g = new Game(20,20, 0,0);
             }
         });
@@ -61,6 +60,8 @@ public class FlowLayoutExample {
             }
         }
     }
+
+
 
     //https://www.geeksforgeeks.org/inplace-rotate-square-matrix-by-90-degrees/
     private static void rotateMatrix(EraseAction[][] mat)
@@ -95,4 +96,39 @@ public class FlowLayoutExample {
             }
         }
     }
+
+
+
+
+
+    /*
+    public static void rotateMatrix(EraseAction[][] matrix) {
+        if (matrix.length == 0) {
+            return;
+        }
+        for (int i = 0; i < matrix.length / 2; i++) {
+            EraseAction e = new EraseAction(0,0);
+            e = mat[x][y];
+            x = e.x;
+            y = e.y;
+
+            int top = i;
+            int bottom = matrix.length - 1 - i;
+            for (int j = top; j < bottom; j++) {
+                int temp = matrix[top][j].alive;
+                matrix[top][j] = matrix[j][bottom];
+                matrix[j][bottom] = matrix[bottom][bottom - (j - top)];
+                matrix[bottom][bottom - (j - top)] = matrix[bottom - (j - top)][top];
+                matrix[bottom - (j - top)][top] = temp;
+            }
+        }
+    }
+
+     */
+
+
+
+
+
+
 }
