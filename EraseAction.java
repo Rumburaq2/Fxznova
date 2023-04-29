@@ -15,15 +15,6 @@ public class EraseAction extends AbstractAction {
         super("");
         this.x = i;
         this.y = j;
-
-        /*
-        for (int k = 0; k < 20; k++) {
-            for (int l = 0; l < 20; l++) {
-                grid_arr[k][l] = new Cell(i, j, 0);
-            }
-        }
-
-         */
     }
 
     @Override
