@@ -8,7 +8,9 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class FlowLayoutExample {
+public class MainMenu {
+
+    public static boolean nastaveno = false;
 
     public static void main(String[] args) {
 
@@ -32,7 +34,8 @@ public class FlowLayoutExample {
         jb2.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 System.out.println("rucni nastaveni");
-                Game g = new Game(20,20, 0,0);
+                nastaveno = true;
+                ButtonPanel g = new ButtonPanel(20,20, 0,0);
             }
         });
 

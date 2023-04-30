@@ -4,14 +4,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
-public class EraseAction extends AbstractAction {
+public class ButtonSettings extends AbstractAction {
     int x;
     int y;
 
     boolean alive = false;
     int pocitadlo = 0;//kolikrat bylo tlacitko kliknuto
 
-    EraseAction(int i, int j) {
+    ButtonSettings(int i, int j) {
         super("");
         this.x = i;
         this.y = j;

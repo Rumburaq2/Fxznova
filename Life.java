@@ -27,19 +27,24 @@ public class Life {
 
 
     public void init() {
-        EraseAction e = new EraseAction(0,0);
+        ButtonSettings e = new ButtonSettings(0,0);
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
-                //grid[i][j] = random.nextInt(2);//vykomentovat
-                //importneme pomocí getteru 2D pole z tridy FlowLayout/Nastavovače
-                e = Game.grid_arr[i][j];
-                if(e.alive == true ){
-                    //grid[i][j] = 1;
-                    grid[i][j] = new Cell(i, j, 1);
+                if(MainMenu.nastaveno == false){
+                   int n = random.nextInt(2);
+                    grid[i][j] = new Cell(i, j, n);
                 }
-                else if(e.alive == false){
-                    //grid[i][j] = 0;
-                    grid[i][j] = new Cell(i, j, 0);
+                else {
+                    //grid[i][j] = random.nextInt(2);//vykomentovat
+                    //importneme pomocí getteru 2D pole z tridy FlowLayout/Nastavovače
+                    e = ButtonPanel.grid_arr[i][j];
+                    if (e.alive == true) {
+                        //grid[i][j] = 1;
+                        grid[i][j] = new Cell(i, j, 1);
+                    } else if (e.alive == false) {
+                        //grid[i][j] = 0;
+                        grid[i][j] = new Cell(i, j, 0);
+                    }
                 }
 
             }
