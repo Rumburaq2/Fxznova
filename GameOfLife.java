@@ -18,7 +18,7 @@ public class GameOfLife extends Application {
     private static final int height = 500;
     private static final int cellSize = 10;
 
-    EraseAction[][] grid_ar = new EraseAction[20][20];
+    ButtonSettings[][] grid_ar = new ButtonSettings[20][20];
 
     public static void main(String[] args) {
         launch(args);
