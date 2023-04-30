@@ -14,9 +14,8 @@ public class ButtonPanel extends JFrame {
     public static ButtonSettings[][] grid_arr = new ButtonSettings[20][20];
 
 
-
     public ButtonPanel(int rows, int cols, int hgap, int vgap){
-        JFrame frame=new JFrame("Set JButton background color");
+        JFrame frame=new JFrame("Pocatecni konfigurace");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         PanelPanelu = new JPanel();
         PanelPanelu.setPreferredSize(new Dimension(500, 600));
@@ -34,7 +33,7 @@ public class ButtonPanel extends JFrame {
         for(int i=0;i<rows;i++) {
             for(int j=0;j<cols;j++) {
                 JButton btn=new JButton(grid_arr[i][j]);
-                btn.setBorder(BorderFactory.createLineBorder(Color.black));
+                btn.setBorder(BorderFactory.createLineBorder(Color.black));//ohranicime kazdy button cernou carou
                 panel.add(btn);
             }
         }
@@ -47,7 +46,7 @@ public class ButtonPanel extends JFrame {
         b.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 System.out.println("ulozeno!");
-                System.out.println(grid_arr[0][1].alive);
+                //System.out.println(grid_arr[0][1].alive);
             }
         });
 

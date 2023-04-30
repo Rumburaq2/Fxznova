@@ -9,7 +9,6 @@ public class ButtonSettings extends AbstractAction {
     int y;
 
     boolean alive = false;
-    int pocitadlo = 0;//kolikrat bylo tlacitko kliknuto
 
     ButtonSettings(int i, int j) {
         super("");
@@ -22,24 +21,20 @@ public class ButtonSettings extends AbstractAction {
         //System.out.println("Do " + arg0.getActionCommand());
 
         if (arg0.getSource() instanceof JButton) {
-            if(pocitadlo % 2 == 0) {
-                ((JButton) arg0.getSource()).setBackground(Color.BLUE);
+            if(alive == false) {//na button se kliknulo po prve
+                ((JButton) arg0.getSource()).setBackground(Color.BLUE);//nastavime na modro
                 ((JButton) arg0.getSource()).setContentAreaFilled(true);
                 ((JButton) arg0.getSource()).setOpaque(true);
                 alive = true;
 
             }
-            else if(pocitadlo % 2 != 2){
-                ((JButton) arg0.getSource()).setBackground(new Color(238, 238, 238));
+            else if(alive == true){//na button se kliknulo po druhe
+                ((JButton) arg0.getSource()).setBackground(new Color(238, 238, 238));//nastavime na sedivo
                 ((JButton) arg0.getSource()).setContentAreaFilled(true);
                 ((JButton) arg0.getSource()).setOpaque(true);
                 alive = false;
-
             }
-
-            System.out.println(this.x + " " + this.y + " " + this.alive);
-            pocitadlo++;
-
+            //System.out.println(this.x + " " + this.y + " " + this.alive);
         }
     }
 }
