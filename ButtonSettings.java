@@ -34,7 +34,7 @@ public class ButtonSettings extends AbstractAction {
                 ((JButton) arg0.getSource()).setOpaque(true);
                 alive = false;
             }
-            //System.out.println(this.x + " " + this.y + " " + this.alive);
+            System.out.println(this.x + " " + this.y + " " + this.alive);
         }
     }
 }
