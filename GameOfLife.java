@@ -12,13 +12,16 @@ import javafx.stage.Stage;
 
 import java.util.concurrent.TimeUnit;
 
+import static com.example.fxznova.MainMenu.COLS;
+import static com.example.fxznova.MainMenu.ROWS;
+
 public class GameOfLife extends Application {
 
     private static final int width = 500;//muzeme vypocitat vychozi hodnotu podle poctu bunek
     private static final int height = 500;
     private static final int cellSize = 10;
 
-    ButtonSettings[][] grid_ar = new ButtonSettings[20][20];
+    ButtonSettings[][] grid_ar = new ButtonSettings[ROWS][COLS];
 
     public static void main(String[] args) {
         launch(args);
@@ -44,8 +47,8 @@ public class GameOfLife extends Application {
 
         //int rows = (int) Math.floor(height / cellSize);
         ///int cols = (int) Math.floor(width / cellSize);
-        int rows = 20;
-        int cols = 20;
+        int rows = ROWS;
+        int cols = COLS;
 
         GraphicsContext graphics = canvas.getGraphicsContext2D();
         Life life = new Life(rows, cols, graphics);

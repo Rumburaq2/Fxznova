@@ -10,8 +10,8 @@ import java.awt.event.ActionListener;
 
 public class MainMenu {
 
-    static int ROWS = 20;//velikosti pole
-    static int COLS = 20;
+    static int ROWS = 80;//velikosti pole
+    static int COLS = 80;
 
     public static boolean nastaveno = false;
 

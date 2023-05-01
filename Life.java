@@ -4,6 +4,9 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import java.util.Random;
 
+import static com.example.fxznova.MainMenu.COLS;
+import static com.example.fxznova.MainMenu.ROWS;
+
 
 public class Life {
     private final int rows;
@@ -16,7 +19,7 @@ public class Life {
     private static final int height = 500;
     private static final int cellSize = 10;
 
-    private Cell[][] next = new Cell[20][20];
+    private Cell[][] next = new Cell[ROWS][COLS];
 
     public Life(int rows, int cols, GraphicsContext graphics) {
         this.rows = rows;
@@ -146,8 +149,8 @@ public class Life {
         int sum = 0;
         for (int i = -1; i < 2; i++) {
             for (int j = -1; j < 2; j++) {
-                int col = (c.x + i + cols) % cols;
-                int row = (c.y + j + rows) % rows;
+                int col = (c.x + i + rows) % rows;
+                int row = (c.y + j + cols) % cols;
                 sum += maze[col][row].stav;
             }
         }

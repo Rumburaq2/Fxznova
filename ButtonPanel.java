@@ -5,13 +5,16 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import static com.example.fxznova.MainMenu.COLS;
+import static com.example.fxznova.MainMenu.ROWS;
+
 public class ButtonPanel extends JFrame {
     private JPanel panel;
     private JPanel PanelPanelu;
 
     private JPanel ButtonPanel;
 
-    public static ButtonSettings[][] grid_arr = new ButtonSettings[20][20];
+    public static ButtonSettings[][] grid_arr = new ButtonSettings[ROWS][COLS];
 
 
     public ButtonPanel(int rows, int cols, int hgap, int vgap){
@@ -23,8 +26,8 @@ public class ButtonPanel extends JFrame {
         panel=new JPanel(new GridLayout(rows, cols, hgap, vgap));
         panel.setPreferredSize(new Dimension(500, 500));
         //ulozime si buttony do pole aby se mohla ulozit jejich hodnota a poslat dal
-        for (int i = 0; i < 20; i++) {
-            for (int j = 0; j < 20; j++) {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
                 grid_arr[i][j] = new ButtonSettings(i, j);
             }
         }
