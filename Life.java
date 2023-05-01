@@ -35,7 +35,6 @@ public class Life {
                     grid[i][j] = new Cell(i, j, n);
                 }
                 else {
-                    //grid[i][j] = random.nextInt(2);//vykomentovat
                     //importneme pomocí getteru 2D pole z tridy FlowLayout/Nastavovače
                     e = ButtonPanel.grid_arr[i][j];
                     if (e.alive == true) {
@@ -147,8 +146,8 @@ public class Life {
         int sum = 0;
         for (int i = -1; i < 2; i++) {
             for (int j = -1; j < 2; j++) {
-                int col = (c.x + i + 20) % 20;
-                int row = (c.y + j + 20) % 20;
+                int col = (c.x + i + cols) % cols;
+                int row = (c.y + j + rows) % rows;
                 sum += maze[col][row].stav;
             }
         }

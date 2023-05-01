@@ -10,6 +10,9 @@ import java.awt.event.ActionListener;
 
 public class MainMenu {
 
+    static int ROWS = 20;//velikosti pole
+    static int COLS = 20;
+
     public static boolean nastaveno = false;
 
     public static void main(String[] args) {
@@ -35,7 +38,7 @@ public class MainMenu {
             public void actionPerformed(ActionEvent e){
                 //spusti rucni konfiguraci pocatecniho stavu
                 nastaveno = true;
-                ButtonPanel g = new ButtonPanel(20,20, 0,0);
+                ButtonPanel g = new ButtonPanel(ROWS,COLS, 0,0);
             }
         });
 
