@@ -17,8 +17,9 @@ import static com.example.fxznova.MainMenu.ROWS;
 
 public class GameOfLife extends Application {
 
-    private static final int width = 500;//muzeme vypocitat vychozi hodnotu podle poctu bunek
-    private static final int height = 500;
+    //muzeme vypocitat vychozi hodnotu podle poctu bunek
+    private static final int width = 600;//500
+    private static final int height = 600;//500
     private static final int cellSize = 10;
 
     ButtonSettings[][] grid_ar = new ButtonSettings[ROWS][COLS];

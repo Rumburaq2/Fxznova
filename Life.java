@@ -15,9 +15,9 @@ public class Life {
     private Random random = new Random();
     private final GraphicsContext graphics;
 
-    private static final int width = 500;
-    private static final int height = 500;
-    private static final int cellSize = 10;
+    private static final int width = 800;//500
+    private static final int height = 800;//500
+    private static final int cellSize = 10;//10
 
     private Cell[][] next = new Cell[ROWS][COLS];
 

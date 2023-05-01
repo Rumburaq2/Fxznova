@@ -21,10 +21,10 @@ public class ButtonPanel extends JFrame {
         JFrame frame=new JFrame("Pocatecni konfigurace");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         PanelPanelu = new JPanel();
-        PanelPanelu.setPreferredSize(new Dimension(500, 600));
+        PanelPanelu.setPreferredSize(new Dimension(800, 900));//500, 600
 
         panel=new JPanel(new GridLayout(rows, cols, hgap, vgap));
-        panel.setPreferredSize(new Dimension(500, 500));
+        panel.setPreferredSize(new Dimension(800, 800));//500, 500
         //ulozime si buttony do pole aby se mohla ulozit jejich hodnota a poslat dal
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
@@ -44,7 +44,7 @@ public class ButtonPanel extends JFrame {
         //panel pro tlacitko pro ulozeni konfigurace
         // - ve skutecnost neni potreba(?) - nic neuklada
         ButtonPanel = new JPanel();
-        ButtonPanel.setPreferredSize(new Dimension(500, 100));
+        ButtonPanel.setPreferredSize(new Dimension(800, 100));//500, 100
         JButton b=new JButton("Ulozit nastavení");
         b.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){

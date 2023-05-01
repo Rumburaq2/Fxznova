@@ -10,8 +10,31 @@ import java.awt.event.ActionListener;
 
 public class MainMenu {
 
-    static int ROWS = 80;//velikosti pole
-    static int COLS = 80;
+    static int ROWS = 60;//velikosti pole
+    static int COLS = 60;
+
+    /*
+    //max velikost:
+    // ROWS = 90;
+    // COLS = 168;
+    // GOL WIDTH = 1700;
+    // GOL HEIGHT = 900;
+    // hazi bufferoverflow ale i tak funguje
+
+    // max velikost:
+    // ROWS = 90;
+    // COLS = 100;
+    // GOL WIDTH = 1000;
+    // GOL HEIGHT = 900;
+    // NEhazi bufferoverflow; funguje ale je to tam dive cerny
+
+    // max velikost:
+    // ROWS = 80;
+    // COLS = 80;
+    // GOL WIDTH = 800;
+    // GOL HEIGHT = 800;
+    // NEhazi bufferoverflow; funguje ale je to tam dive cerny
+     */
 
     public static boolean nastaveno = false;
 
