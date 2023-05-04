@@ -60,30 +60,12 @@ public class GameOfLife extends Application {
 
             @Override
             public void handle(long now) {
-                if ((now - lastUpdate) >= TimeUnit.MILLISECONDS.toNanos(100)) {
+                if ((now - lastUpdate) >= TimeUnit.MILLISECONDS.toNanos(150)) {
                     life.tick();
                     lastUpdate = now;
                 }
             }
         };
-
-
-        /*
-        EraseAction e = new EraseAction(0,0);
-        for (int i = 0; i < 20; i++) {
-            for (int j = 0; j < 20; j++) {
-                e = Game.grid_arr[i][j];
-                if(e.alive){
-                    System.out.print(e.x);
-                    System.out.print(", ");
-                    System.out.println(e.y);
-                }
-
-
-            }
-        }
-
-         */
 
 
         reset.setOnAction(l -> life.init());

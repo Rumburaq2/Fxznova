@@ -48,7 +48,7 @@ public class MainMenu {
         // Definujeme Buttons
         JButton jb1 = new JButton("Spustit simulaci");
         JButton jb2 = new JButton("Konfigurace počátečního stavu");
-        JButton jb3 = new JButton("Button 3");
+        //JButton jb3 = new JButton("Button 3");
 
         jb1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
@@ -70,7 +70,7 @@ public class MainMenu {
         panel.setLayout(new FlowLayout());
         panel.add(jb1);
         panel.add(jb2);
-        panel.add(jb3);
+        //panel.add(jb3);
 
         // zobrazime frame
         frame.add(panel);
