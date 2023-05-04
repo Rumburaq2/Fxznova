@@ -41,14 +41,11 @@ public class Life {
                     //importneme pomocí getteru 2D pole z tridy FlowLayout/Nastavovače
                     e = ButtonPanel.grid_arr[i][j];
                     if (e.alive == true) {
-                        //grid[i][j] = 1;
                         grid[i][j] = new Cell(i, j, 1);
                     } else if (e.alive == false) {
-                        //grid[i][j] = 0;
                         grid[i][j] = new Cell(i, j, 0);
                     }
                 }
-
             }
         }
         //nastavyme vsechny bunky v next na 0
@@ -84,28 +81,6 @@ public class Life {
         }
     }
 
-    /*
-    public void tick() {
-        int[][] next = new int[rows][cols];
-
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                int neighbors = countAliveNeighbors(i, j);
-
-                if (neighbors == 3) {
-                    next[i][j] = 1;
-                }else if (neighbors < 2 || neighbors > 3) {
-                    next[i][j] = 0;
-                }else {
-                    next[i][j] = grid[i][j];
-                }
-            }
-        }
-        grid = next;
-        draw();
-    }
-     */
-
 
     public void tick() {
         //pro kazdou bunkku
@@ -129,7 +104,6 @@ public class Life {
                         next[i][j] = x;
                     }
                     else {//zustane stejny stav
-                        //Cell x = new Cell(i, j, 1);
                         next[i][j] = grid[i][j];
                     }
                 }
