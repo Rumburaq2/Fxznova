@@ -12,7 +12,6 @@ public class ButtonPanel extends JFrame {
     private JPanel panel;
     private JPanel PanelPanelu;
 
-    private JPanel ButtonPanel;
 
     public static ButtonSettings[][] grid_arr = new ButtonSettings[ROWS][COLS];
 
@@ -21,7 +20,7 @@ public class ButtonPanel extends JFrame {
         JFrame frame=new JFrame("Pocatecni konfigurace");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         PanelPanelu = new JPanel();
-        PanelPanelu.setPreferredSize(new Dimension(800, 900));//500, 600
+        PanelPanelu.setPreferredSize(new Dimension(800, 810));//500, 600
 
         panel=new JPanel(new GridLayout(rows, cols, hgap, vgap));
         panel.setPreferredSize(new Dimension(800, 800));//500, 500
@@ -41,22 +40,9 @@ public class ButtonPanel extends JFrame {
             }
         }
 
-        //panel pro tlacitko pro ulozeni konfigurace
-        // - ve skutecnost neni potreba(?) - nic neuklada
-        ButtonPanel = new JPanel();
-        ButtonPanel.setPreferredSize(new Dimension(800, 100));//500, 100
-        JButton b=new JButton("Ulozit nastavení");
-        b.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e){
-                System.out.println("ulozeno!");
-                //System.out.println(grid_arr[0][1].alive);
-            }
-        });
 
         //pridame panely do JFrame
-        ButtonPanel.add(b);
         PanelPanelu.add(panel);
-        PanelPanelu.add(ButtonPanel);
         add(PanelPanelu);
         pack();
         setVisible(true);

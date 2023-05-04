@@ -22,7 +22,6 @@ public class GameOfLife extends Application {
     private static final int height = 600;//500
     private static final int cellSize = 10;
 
-    ButtonSettings[][] grid_ar = new ButtonSettings[ROWS][COLS];
 
     public static void main(String[] args) {
         launch(args);
@@ -46,8 +45,7 @@ public class GameOfLife extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
 
-        //int rows = (int) Math.floor(height / cellSize);
-        ///int cols = (int) Math.floor(width / cellSize);
+
         int rows = ROWS;
         int cols = COLS;
 

@@ -13,28 +13,6 @@ public class MainMenu {
     static int ROWS = 60;//velikosti pole
     static int COLS = 60;
 
-    /*
-    //max velikost:
-    // ROWS = 90;
-    // COLS = 168;
-    // GOL WIDTH = 1700;
-    // GOL HEIGHT = 900;
-    // hazi bufferoverflow ale i tak funguje
-
-    // max velikost:
-    // ROWS = 90;
-    // COLS = 100;
-    // GOL WIDTH = 1000;
-    // GOL HEIGHT = 900;
-    // NEhazi bufferoverflow; funguje ale je to tam dive cerny
-
-    // max velikost:
-    // ROWS = 80;
-    // COLS = 80;
-    // GOL WIDTH = 800;
-    // GOL HEIGHT = 800;
-    // NEhazi bufferoverflow; funguje ale je to tam dive cerny
-     */
 
     public static boolean nastaveno = false;
 
@@ -48,7 +26,6 @@ public class MainMenu {
         // Definujeme Buttons
         JButton jb1 = new JButton("Spustit simulaci");
         JButton jb2 = new JButton("Konfigurace počátečního stavu");
-        //JButton jb3 = new JButton("Button 3");
 
         jb1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
@@ -70,7 +47,6 @@ public class MainMenu {
         panel.setLayout(new FlowLayout());
         panel.add(jb1);
         panel.add(jb2);
-        //panel.add(jb3);
 
         // zobrazime frame
         frame.add(panel);
